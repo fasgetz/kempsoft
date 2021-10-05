@@ -1,0 +1,26 @@
+footer {
+  border-top: 0.5px solid #96a9bc;
+  font-size: 14px;
+  margin-top: 50px;
+}
+
+@media (max-width: 991px) {
+    /*body {*/
+        /* Margin bottom by footer height */
+        /*margin-bottom: 275px;
+    }*/
+
+    .main-content {
+        margin-top: 110px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /*body {*/
+        /* Margin bottom by footer height */
+        /*margin-bottom: 475px;
+    }*/
+    .main-content {
+        margin-top: 110px !important;
+    }
+}

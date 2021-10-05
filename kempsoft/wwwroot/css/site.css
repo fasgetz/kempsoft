@@ -1,0 +1,191 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+/* Меню */
+
+body {
+  background-color: #181a1b
+}
+
+.navbar-after {
+  background-color: #181a1b !important
+}
+
+
+.header {
+  color: white;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  transition: all .3s ease;
+}
+
+.header.out {
+  transform: translateY(-100%);
+}
+
+.main-content {
+  color: white
+}
+
+.phone-number {
+  font-size: 28px;
+  color: #039be5;
+  font-family: "Roboto Condensed",Verdana,Tahoma,sans-serif;
+  text-decoration: none;
+}
+
+.img-logo {
+    height: auto;
+    width: 100%;
+}
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+.navbar-nav .nav-link {
+  color: #bdbdbd !important
+}
+
+
+/* -------- */
+
+.disabled-block {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.navbar-toggler_icon {
+  height: 32px;
+  width: auto;
+}
+
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #bdbdbd !important;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 250px;
+  font-family: 'IBM Plex Sans',Arial,sans-serif;
+}
+
+
+/* Майн контент */
+
+.main-content {
+  margin-top: 110px;
+}
+
+
+/* Меню мобильное*/
+
+.menu-mobile {
+  background:url(../img/bg8-1.jpg) no-repeat 50% 50%;
+  color: white
+}
+
+.menu-mobile a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.menu-mobile a div:hover {
+background: rgba(0,0,0,.5);
+}
+
+@media (max-width: 991px) {
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 275px;
+  }
+
+
+    .main-content {
+        margin-top: 65px !important;
+    }
+}
+
+@media (max-width: 768px) {
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 475px;
+  }
+
+    .main-content {
+        margin-top: 90px !important;
+    }
+}
+
+
+
+ul li {
+  list-style: none
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+.footer {
+  bottom: 0;
+  padding-bottom: 20px;
+  position: absolute;
+  width: 100%;
+
+}
+
+footer a {
+  color: inherit
+}

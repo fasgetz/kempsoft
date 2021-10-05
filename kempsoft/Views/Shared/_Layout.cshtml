@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kempsoft - @ViewData["Title"]</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/maincontent.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/animate.min.css" />
+    <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,400&display=swap" rel="stylesheet">
+
+    @await RenderSectionAsync("Css", required: false)
+</head>
+<body>
+    <div class="d-block d-lg-none menu-mobile offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel"><a asp-controller="Home" asp-action="Index">ПРОСТО КЭМП</a></h5>
+
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body text-center">
+            <a href="#">
+                <div class="p-2 active">
+                    Прайс лист
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="Privacy">
+                <div class="p-2">
+                    Контакты
+                </div>
+            </a>
+            <a href="#">
+                <div class="p-2">
+                    Личный кабинет
+                </div>
+            </a>
+        </div>
+    </div>
+    <header>
+        <nav class="header-expand navbar-after p-0 d-none navbar nav mb-3 fixed-top navbar-expand-md navbar-toggleable-md box-shadow">
+            <div class="container-lg">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img class="img-logo" src="~/img/logo.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <img class="navbar-toggler_icon" src="~/img/list.png" alt="toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                </button>
+                <div class="d-lg-flex d-none navbar-collapse collapse d-md-inline-flex justify-content-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item p-1">
+                            <a class="nav-link btn text-dark active" href="#payment">Прайс лист</a>
+                        </li>
+                        <li class="nav-item p-1">
+                            <a class="nav-link btn text-dark active" href="#payment">Портфолио</a>
+                        </li>
+                        <li class="nav-item p-1">
+                            <a class="nav-link btn text-dark" asp-controller="Home" asp-action="Privacy">Контакты</a>
+                        </li>
+                        <li class="nav-item p-1">
+                            <a class="nav-link btn text-dark" href="#">Войти</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </nav>
+
+        <nav class="header navbar nav mb-3 fixed-top navbar-expand-md navbar-toggleable-md box-shadow">
+            <div class="container-lg">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img class="img-logo" src="~/img/logo.png" alt="logo" ></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <img class="navbar-toggler_icon" src="~/img/list.png" alt="toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                </button>
+
+                <div class="d-none d-md-block">
+                    <a class="phone-number text-center d-none d-md-block" href="tel:+79629007965">+7-962-900-79-65</a>
+                    <div class="navbar-collapse collapse d-md-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item p-1">
+                                <a class="nav-link btn text-dark active" href="#payment">Прайс лист</a>
+                            </li>
+                            <li class="nav-item p-1">
+                                <a class="nav-link btn text-dark active" href="#payment">Портфолио</a>
+                            </li>
+                            <li class="nav-item p-1">
+                                <a class="nav-link btn text-dark" asp-controller="Home" asp-action="Privacy">Контакты</a>
+                            </li>
+                            <li class="nav-item p-1">
+                                <a class="nav-link btn text-dark" href="#">Войти</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </nav>
+
+    </header>
+    <div class="container-fluid p-0 main-content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container mt-5">
+            <div class="text-center">
+                &copy; 2021 - ООО "ПРОСТО КЭМП"
+            </div>
+            <div class="row mt-3">
+                <div class="col-md col-12">
+                    <div><b>Справочная</b></div>
+                    <div class="mt-3"><a href="#">Договор-оферта</a></div>
+                    <div class="mt-3"><a href="#">Правила использования</a></div>
+                    <div class="mt-3"><a href="#">Политика конфиденциальности</a></div>
+                </div>
+                <div class="col-md col-12 mt-3 mt-md-0">
+                    <div><b>Продукт</b></div>
+                    <div class="mt-3"><a href="#">Прайс-лист</a></div>
+                    <div class="mt-3"><a href="#">Доступные курсы</a></div>
+                </div>
+                <div class="col-md col-12 mt-3 mt-md-0">
+                    <div><b>Компания</b></div>
+                    <div class="mt-3"><a asp-controller="Home" asp-action="Privacy">Контакты</a></div>
+                    <div class="mt-3"><a href="mailto:admin@learn-courses.ru">admin@kempsoft.ru</a></div>
+                    <div class="mt-3"><a href="tel:79629007965">7-962-900-79-65</a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/activemenu.js" asp-append-version="true"></script>
+
+    <script>
+        var header = $('.header'),
+            scrollPrev = 0;
+
+
+        $(window).scroll(function () {
+            var scrolled = $(window).scrollTop();
+
+            if (scrolled < 100) {
+                header.removeClass('out');
+                $('.header-expand').addClass('d-none')
+            }
+            else {
+
+                header.addClass('out');
+                $('.header-expand').removeClass('d-none')
+            }
+
+            scrollPrev = scrolled;
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

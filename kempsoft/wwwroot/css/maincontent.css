@@ -1,0 +1,298 @@
+
+/* Блок презента */
+
+.present-block {
+  background-size: 100%;
+  background-image: url(../img/rgegegeigje.png);
+  background-position: center 100%;
+  background-repeat: no-repeat;
+}
+
+.present-block__header {
+padding-top: 30px;
+}
+
+
+.present-block__header h2 {
+    font-size: 1.7rem;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.present-block__header h3 {
+  font-size: 1.2rem;
+}
+
+.present-block__item-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+.present-block .lending-head__img img {
+  width: 100%;
+  height: auto;
+}
+
+.present-block_button-price {
+  margin-top: 40px;
+}
+
+.present-block_button-price a {
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'IBM Plex Sans',Arial,sans-serif;
+    line-height: 1.55;
+    font-weight: 400;
+    border-width: 1px;
+    background-position: center center;
+    border-color: #ffffff;
+    border-style: solid;
+}
+
+.present-block_button-price a:hover {
+  background: white;
+}
+
+.present-block_button-price .button-project > a {
+  border: none !important;
+}
+
+.present-block_button-price .button-project > a:hover {
+  color: black
+}
+
+.stack-items .present-block__item-img {
+  width: 70px;
+  height: 70px;
+  margin-right: 15px;
+}
+
+.present-block__items {
+  margin-top: 100px;
+}
+
+.present-block__item {
+  border: 1px solid #287ef8;
+}
+
+.present-block__item h5 {
+  font-size: 2.4rem;
+}
+
+.present-block__item div {
+  color: #9e9e9e;
+}
+
+
+/* Блок наши кейсы */
+
+.our-cases-block {
+
+}
+
+.header-section {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.case-item {
+  border: 1px solid #287ef8;
+  background: #242425
+}
+
+.case-item__header {
+  font-size: 1.6rem
+}
+
+.case-item__about {
+  color: #9e9e9e;
+  font-size: 1.4rem
+}
+
+.case-item__watch-button a {
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'IBM Plex Sans',Arial,sans-serif;
+  line-height: 1.55;
+  font-weight: 400;
+  border-width: 1px;
+  background-position: center center;
+  border-color: #ffffff;
+  border-style: solid;
+}
+
+.case-item__watch-button a:hover {
+  background: white;
+}
+
+.case-item__img img {
+  width: 100%;
+  height: auto
+}
+
+/* Блок наши преимущества */
+
+.benefits-item__number {
+  color: #287ef8;
+  font-size: 3rem !important;
+}
+
+.benefits-item div {
+  font-size: 1.3rem;
+}
+
+.benefits__sidewall-left .benefits-item:nth-child(odd) {
+  margin-left: 50px !important;
+}
+
+.benefits__sidewall-right .benefits-item:nth-child(odd) {
+  margin-right: 50px !important;
+}
+
+.benefits__img img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Блок этапы работы */
+
+.stages-block {
+
+}
+
+.stage-item {
+  border: 1px solid #287ef8;
+  background: #242425
+}
+
+.stage-item:hover {
+  background: rgba(0,0,0,0.5);
+  box-shadow: inset 0 0 0 1px #3a7999;
+}
+
+
+.stage-item__header {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.7
+}
+
+.stage-item__header-number {
+  color: #287ef8;
+  font-size: 1.7rem;
+  font-weight: 800;
+  border: 1px solid #287ef8;
+  border-radius: 10px;
+  padding: 5px 15px;
+  margin: 5px;
+}
+
+.stage-item__description {
+    color: #7a7a7a;
+    font-size: 1rem;
+    line-height: 1.55;
+    font-weight: 400;
+}
+
+
+/* Блок прайс листа */
+
+.price-block {
+  background-image: url(../img/rgegegege2.png);
+  background-position: center 100%;
+  background-repeat: no-repeat;
+}
+
+.price-item__header {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.7
+}
+
+.price-item {
+  border: 1px solid #287ef8;
+  background: #242425;
+  padding: 45px;
+}
+
+.price-item:hover {
+  background: rgba(0,0,0,0.5);
+  box-shadow: inset 0 0 0 1px #3a7999;
+}
+
+.price-item__description {
+    color: #7a7a7a;
+    font-size: 1rem;
+    line-height: 1.55;
+    font-weight: 400;
+}
+
+.price-item .border-bottom {
+  border: 1px solid blue;
+}
+
+.price-item__price {
+  font-size: 1.3rem;
+  font-weight: 600
+}
+
+/* Форма остались вопросы */
+
+.form-questions {
+
+}
+
+.form-questions input, .form-questions textarea {
+  background: lightgrey;
+  color: black;
+}
+
+/* Адаптивные медиа */
+
+@media (max-width: 979px) {
+
+
+
+    .benefits-item__description {
+      font-size: 1.7rem !important;
+    }
+
+    .benefits__sidewall-left .benefits-item:nth-child(odd) {
+      margin-left: 0px !important;
+    }
+
+    .benefits__sidewall-right .benefits-item:nth-child(odd) {
+      margin-right: 0px !important;
+    }
+
+
+  .present-block {
+    background-position: center 75%;
+  }
+
+  .present-block__header {
+    padding-top: 50px;
+  }
+
+  .stack-items .present-block__item-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .present-block__items {
+    margin-top: 50px;
+  }
+
+}
+
+@media (max-width: 478px) {
+  .benefits-item__description {
+    font-size: 1.55rem !important;
+  }
+
+}
