@@ -1,11 +1,14 @@
 
-/* Блок презента */
+.present-block__item, .case-item, .stage-item, .price-item {
+    border-radius: 15px
+}
 
+/* Блок презента */
 .present-block {
-  background-size: 100%;
-  background-image: url(../img/rgegegeigje.png);
-  background-position: center 100%;
-  background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url(../img/rgegegeigje.png);
+    background-position: center 100%;
+    background-repeat: no-repeat;
 }
 
 .present-block__header {
