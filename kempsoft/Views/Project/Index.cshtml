@@ -1,0 +1,32 @@
+﻿@model kempsoft.Models.DataBase.ReadyProject
+
+@section Css {
+    <link href="~/css/aboutproject.css" rel="stylesheet" asp-append-version="true" />
+} 
+
+<div class="pt-5">
+    <div class="project-item">
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-lg-5 col-12">
+                    <div class="project-item__name">
+                        <h3 class="header-section">@Model.Name</h3>
+                    </div>
+                    <div class="project-item__description mt-3">
+                        @Model.Description
+                    </div>
+                </div>
+                <div class="col-lg-5 col-12 mt-3 mt-lg-0">
+                    <h5 class="project-item__header-task">Задачи проекта:</h5>
+                    <div class="mt-3 project-item__tasks">
+                        @Model.TasksProject
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center project-item__img mt-5">
+                <img src="~/img/Projects/Present/@Model.ProjectImg" alt="Alternate Text" />
+            </div>
+        </div>
+    </div>
+</div>
+

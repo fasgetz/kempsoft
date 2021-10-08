@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using kempsoft.Models.DataBase;
+using kempsoft.Services;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +10,18 @@ namespace kempsoft.Controllers
 {
     public class PortfolioController : Controller
     {
-        public IActionResult Index()
+        private readonly IProjectService projectService;
+
+        public PortfolioController(IProjectService projectService)
         {
-            return View();
+            this.projectService = projectService;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            IEnumerable<ReadyProject> projects = await projectService.getAllProjects();
+
+            return View(projects);
         }
     }
 }

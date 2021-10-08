@@ -1,115 +1,35 @@
-﻿@{
+﻿@model IEnumerable<ReadyProject>
+
+@{
     ViewData["Title"] = "портфолио проектов";
 }
 
 <section class="mt-5 pb-5">
     <div class="container-xl our-cases-block">
         <h3 class="header-section text-center text-lg-start">Наши кейсы</h3>
-        <div class="case-item mt-5 pt-5 pb-5">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <div class="case-item__img">
-                            <img src="~/img/virtcards.jpg" alt="imagesite">
+        @foreach (var item in Model)
+        {
+            <div class="case-item mt-5 pt-5 pb-5">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <div class="case-item__img">
+                                <img src="~/img/Projects/Logo/@item.LogoImg" alt="imagesite">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <h5 class="mt-3 case-item__header">Зарплатный проект</h5>
-                        <div class="case-item__about mt-3">
-                            Корпоративный проект для учета выплат зарплат сотрудникам на банковские карты
-                            с помощью эквайринговой системы
-                        </div>
-                        <div class="case-item__watch-button mt-3 d-flex justify-content-lg-start justify-content-center">
-                            <a class="btn p-3 w-50" href="#">Смотреть кейс</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="case-item mt-5 pt-5 pb-5">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <div class="case-item__img">
-                            <img src="~/img/osdn.jpg" alt="imagesite">
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <h5 class="mt-3 case-item__header">Дизайн интерьера</h5>
-                        <div class="case-item__about mt-3">
-                            Проект по дизайну интерьеров строительных объектов, а также по выполнению
-                            ремонтно-отделочных работ с удобным калькулятором расчета цен
-                        </div>
-                        <div class="case-item__watch-button mt-3 d-flex justify-content-lg-start justify-content-center">
-                            <a class="btn p-3 w-50" href="#">Смотреть кейс</a>
+                        <div class="col-12 col-lg-6">
+                            <h5 class="mt-3 case-item__header">@item.Name</h5>
+                            <div class="case-item__about mt-3">
+                                @item.Description
+                            </div>
+                            <div class="case-item__watch-button mt-3 d-flex justify-content-lg-start justify-content-center">
+                                <a class="btn p-3 w-50" asp-controller="Project" asp-action="Index" asp-route-id="@item.Id">Смотреть кейс</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="case-item mt-5 pt-5 pb-5">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <div class="case-item__img">
-                            <img src="~/img/moneysend.jpg" alt="imagesite">
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <h5 class="mt-3 case-item__header">Обменный пункт</h5>
-                        <div class="case-item__about mt-3">
-                            Обменный пункт по выдаче денежных средств с учетом комиссионных сборов организации,
-                            которые отражены в реактивном калькуляторе, расположенном прямо на главной странице
-                        </div>
-                        <div class="case-item__watch-button mt-3 d-flex justify-content-lg-start justify-content-center">
-                            <a class="btn p-3 w-50" href="#">Смотреть кейс</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="case-item mt-5 pt-5 pb-5">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <div class="case-item__img">
-                            <img src="~/img/prostokemp.jpg" alt="imagesite">
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <h5 class="mt-3 case-item__header">Туристическое агентство</h5>
-                        <div class="case-item__about mt-3">
-                            Проект туристического агентства по подбору путевок в страны отдыха с учетом
-                            особенностей, а также с возможностью оплаты через интернет-эквайринг
-                        </div>
-                        <div class="case-item__watch-button mt-3 d-flex justify-content-lg-start justify-content-center">
-                            <a class="btn p-3 w-50" href="#">Смотреть кейс</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="case-item mt-5 pt-5 pb-5">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <div class="case-item__img">
-                            <img src="~/img/learncourses.jpg" alt="imagesite">
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-6">
-                        <h5 class="mt-3 case-item__header">Учебная платформа</h5>
-                        <div class="case-item__about mt-3">
-                            Платформа, предназначенная для обучения через онлайн платформу, которая предоставляет
-                            пользователям доступ к готовым курсам
-                        </div>
-                        <div class="case-item__watch-button mt-3 d-flex justify-content-lg-start justify-content-center">
-                            <a class="btn p-3 w-50" href="#">Смотреть кейс</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </section>
 <section class="form-questions">

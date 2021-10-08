@@ -1,4 +1,6 @@
 ﻿using kempsoft.Models;
+using kempsoft.Models.DataBase;
+using kempsoft.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,15 +14,19 @@ namespace kempsoft.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProjectService projectService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProjectService projectService)
         {
             _logger = logger;
+            this.projectService = projectService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            IEnumerable<ReadyProject> projects = await projectService.getAllProjects();
+
+            return View(projects);
         }
 
         public IActionResult Privacy()
