@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Price> 
+
+<section class="wow bounceInUp mt-5 pb-5 container-xl price-block">
+    <h3 class="header-section text-center text-lg-start">Прайс-лист</h3>
+    <div class="row justify-content-center mt-5 pb-5">
+        @foreach (var item in Model)
+        {
+            <div class="col-12 col-lg-4 mt-5">
+                <div class="price-item">
+                    <h5 class="price-item__header">
+                        @item.Name
+                    </h5>
+                    <div class="price-item__description mt-3">
+                        @item.Description
+                    </div>
+                    <div class="border-bottom mt-5"></div>
+                    <div class="price-item__price mt-3">
+                        @item.Price1.Value.ToString("N0") руб.
+                    </div>
+                    @if (item.IdTypePrice == 2)
+                    {
+                        <div class="price-item__price mt-3">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Количество рабочих дней</label>
+                                <select class="form-control mt-3" id="exampleFormControlSelect1">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                </select>
+                            </div>
+                        </div>
+                    }
+                    <div class="price-item__buyButton button-project mt-5">
+                        <a class="btn btn-primary p-3 w-100" href="#">Оплатить</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

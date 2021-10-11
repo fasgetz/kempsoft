@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Models\ViewModels\" />
     <Folder Include="wwwroot\img\Projects\Logo\" />
     <Folder Include="wwwroot\img\Projects\Present\" />
   </ItemGroup>
