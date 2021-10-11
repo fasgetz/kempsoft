@@ -1,9 +1,11 @@
 using kempsoft.Models.DataBase;
+using kempsoft.Models.Identity;
 using kempsoft.Services;
 using kempsoft.Services.Price;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,6 +37,17 @@ namespace kempsoft
             services.AddDbContext<softkempContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddDbContext<ContextUsers>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("UsersIdentityConnection")));
+
+            services.AddIdentity<User, IdentityRole>(opts =>
+            {
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.User.RequireUniqueEmail = true;    // уникальный email
+                opts.User.AllowedUserNameCharacters = ".@abcdefghijklmnopqrstuvwxyz"; // допустимые символы
+            })
+                .AddDefaultTokenProviders()
+                .AddEntityFrameworkStores<ContextUsers>();
 
             services.AddScoped<IProjectService, ProjectService>();
             services.AddScoped<IPriceService, PriceService>();
@@ -58,6 +71,7 @@ namespace kempsoft
 
             app.UseRouting();
 
+            app.UseAuthentication(); // подключение аутентификации
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
