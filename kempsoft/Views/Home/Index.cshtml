@@ -7,7 +7,7 @@
 <section class="present-block pb-5">
     <div class="container-xl present-block__header">
         <div class="row">
-            <div class="col-12 col-lg-6 justify-content-center align-items-center d-flex text-center text-lg-start">
+            <div class="wow bounceInLeft col-12 col-lg-6 justify-content-center align-items-center d-flex text-center text-lg-start">
                 <div>
                     <h1 class="text-uppercase header-section">Просто Кэмп</h1>
                     <h2 class="mt-3">Разрабатываем лучшие сайты для Ваших целей</h2>
@@ -28,20 +28,20 @@
                     <div class="present-block_button-price container p-0">
                         <div class="row">
                             <div class="col-lg-6 col-12">
-                                <a class="btn w-100 p-3" href="#">Цены на услуги</a>
+                                <a class="btn w-100 p-3" asp-controller="Price" asp-action="Index">Цены на услуги</a>
                             </div>
                             <div class="col-lg-6 col-12 mt-3 button-project mt-lg-0">
-                                <a class="btn btn-primary p-3 w-100" href="#">Проекты</a>
+                                <a class="btn btn-primary p-3 w-100" asp-controller="Portfolio" asp-action="Index">Проекты</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg col-12 lending-head__img mt-5 mt-lg-0">
+            <div class="wow bounceInRight col-lg col-12 lending-head__img mt-5 mt-lg-0">
                 <img src="~/img/headerlending.png" alt="lending">
             </div>
         </div>
-        <div class="row stack-items">
+        <div class="wow bounceInUp row stack-items">
             <div class="col-6 col-lg-3">
                 <div class="p-3 d-flex justify-content-center justify-content-lg-start align-items-center">
                     <img class="present-block__item-img" src="~/img/icons/hashtag.png" alt="item">
@@ -115,7 +115,7 @@
                 </div>
             </div>
         </div>
-        <div class="row present-block__items">
+        <div class="wow bounceInUp  row present-block__items">
             <div class="col-lg col-12 mt-3 mt-lg-0">
                 <div class="present-block__item p-3">
                     <h5>Лучшие цены</h5>
@@ -149,7 +149,7 @@
 
         @foreach (var item in Model)
         {
-            <div class="case-item mt-5 pt-5 pb-5">
+            <div class="wow bounceInUp case-item mt-5 pt-5 pb-5">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12 col-lg-6">
@@ -173,7 +173,7 @@
     </div>
 </section>
 <section class="mt-5 pb-5">
-    <div class="container-xl benefits-block">
+    <div class="wow bounceInUp container-xl benefits-block">
         <h3 class="header-section text-center text-lg-start">Наши преимущества</h3>
         <div class="mt-5">
             <div class="row">
@@ -314,7 +314,7 @@
         </div>
     </div>
 </section>
-<section class="mt-5 pb-5 container-xl stages-block">
+<section class="wow bounceInUp  mt-5 pb-5 container-xl stages-block">
     <h3 class="header-section text-center text-lg-start">Этапы создания веб-сайта</h3>
     <div class="row mt-5">
         <div class="col-12 col-lg-4 mt-5">
@@ -379,7 +379,7 @@
         </div>
     </div>
 </section>
-<section class="mt-5 pb-5 container-xl price-block">
+<section class="wow bounceInUp mt-5 pb-5 container-xl price-block">
     <h3 class="header-section text-center text-lg-start">Прайс-лист</h3>
     <div class="row justify-content-center mt-5 pb-5">
         <div class="col-12 col-lg-4 mt-5">
@@ -466,7 +466,7 @@
         </div>
     </div>
 </section>
-<section class="form-questions">
+<section class="wow bounceInUp form-questions">
     <div class="container">
         <div class="row">
             <h3 class="header-text text-center mt-3">Остались вопросы?</h3>

@@ -76,7 +76,7 @@
 
         <nav class="header navbar nav mb-3 fixed-top navbar-expand-md navbar-toggleable-md box-shadow">
             <div class="container-lg">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img class="img-logo" src="~/img/logo.png" alt="logo" ></a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img class="img-logo" src="~/img/logo.png" alt="logo"></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     <img class="navbar-toggler_icon" src="~/img/list.png" alt="toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
@@ -144,6 +144,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/activemenu.js" asp-append-version="true"></script>
+
+    <script src="~/js/wow.min.js"></script>
+    <script>
+        wow = new WOW({
+            boxClass: 'wow',
+            animateClass: 'animated',
+            offset: 0,
+            mobile: true,
+            live: true
+        })
+        wow.init();
+    </script>
 
     <script>
         var header = $('.header'),
