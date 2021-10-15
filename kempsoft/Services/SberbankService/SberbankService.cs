@@ -97,5 +97,32 @@ namespace kempsoft.Services.SberbankService
 
             return order.FormUrl;
         }
+
+
+        /// <summary>
+        /// Проверка на успешность оплаты
+        /// </summary>
+        /// <param name="idPayment">Номер платежа сбербанка</param>
+        /// <returns></returns>
+        public async Task<bool> checkSuccessPayment(string idPayment)
+        {
+            var orderStatus = await client.GetOrderStatusAsync(idPayment);
+
+            // Если платеж успешно оплачен
+            if (orderStatus.IsSuccess == true)
+            {
+                // Добавляем статус, что оплачен заказ в БД
+                bool addSuccessPayment = await paymentService.addSuccessPaymentStatus(idPayment);
+
+                // Если статус успешно добавлен в бд, то соответственно вернуть true
+                if (addSuccessPayment == true)
+                {
+                    return true;
+                }
+
+            }
+
+            return false;
+        }
     }
 }

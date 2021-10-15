@@ -18,5 +18,13 @@ namespace kempsoft.Services.SberbankService
         /// <param name="userName">Нейм юзера, который создает платежку</param>
         /// <returns>Возвращает url страницы платежа</returns>
         public Task<string> createOrder(PaymentForm model, string userName = null);
+
+
+        /// <summary>
+        /// Проверка на успешность оплаты
+        /// </summary>
+        /// <param name="idPayment">Номер платежа сбербанка</param>
+        /// <returns></returns>
+        public Task<bool> checkSuccessPayment(string idPayment);
     }
 }
