@@ -27,5 +27,18 @@ namespace kempsoft.Services.Price
 
             return prices;
         }
+
+
+        /// <summary>
+        /// Получить прайс
+        /// </summary>
+        /// <param name="priceId">Айди прайса</param>
+        /// <returns></returns>
+        public async Task<Models.DataBase.Price> getPriceAsync(int priceId)
+        {
+            Models.DataBase.Price price = await db.Prices.FirstOrDefaultAsync(i => i.Id == priceId);
+
+            return price;
+        }
     }
 }
