@@ -17,8 +17,11 @@ namespace kempsoft.Models.DataBase
         {
         }
 
+        public virtual DbSet<Payment> Payments { get; set; }
+        public virtual DbSet<PaymentsStatus> PaymentsStatuses { get; set; }
         public virtual DbSet<Price> Prices { get; set; }
         public virtual DbSet<ReadyProject> ReadyProjects { get; set; }
+        public virtual DbSet<StatusPay> StatusPays { get; set; }
         public virtual DbSet<TypePrice> TypePrices { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -29,6 +32,57 @@ namespace kempsoft.Models.DataBase
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Cyrillic_General_CI_AS");
+
+            modelBuilder.Entity<Payment>(entity =>
+            {
+                entity.ToTable("Payment");
+
+                entity.Property(e => e.ContactName).HasColumnName("contactName");
+
+                entity.Property(e => e.ContactPhone).HasColumnName("contactPhone");
+
+                entity.Property(e => e.CountDays).HasColumnName("countDays");
+
+                entity.Property(e => e.Description).HasColumnName("description");
+
+                entity.Property(e => e.OrderId)
+                    .HasMaxLength(50)
+                    .HasColumnName("orderId");
+
+                entity.Property(e => e.PriceId).HasColumnName("priceId");
+
+                entity.Property(e => e.SumPayment).HasColumnType("money");
+
+                entity.Property(e => e.UserId)
+                    .HasMaxLength(100)
+                    .HasColumnName("userId");
+
+                entity.HasOne(d => d.Price)
+                    .WithMany(p => p.Payments)
+                    .HasForeignKey(d => d.PriceId)
+                    .HasConstraintName("FK_Payment_Prices");
+            });
+
+            modelBuilder.Entity<PaymentsStatus>(entity =>
+            {
+                entity.Property(e => e.DateCreated)
+                    .HasColumnType("datetime")
+                    .HasColumnName("dateCreated");
+
+                entity.Property(e => e.IdPayment).HasColumnName("idPayment");
+
+                entity.Property(e => e.IdStatus).HasColumnName("idStatus");
+
+                entity.HasOne(d => d.IdPaymentNavigation)
+                    .WithMany(p => p.PaymentsStatuses)
+                    .HasForeignKey(d => d.IdPayment)
+                    .HasConstraintName("FK_PaymentsStatuses_Payment");
+
+                entity.HasOne(d => d.IdStatusNavigation)
+                    .WithMany(p => p.PaymentsStatuses)
+                    .HasForeignKey(d => d.IdStatus)
+                    .HasConstraintName("FK_PaymentsStatuses_StatusPay");
+            });
 
             modelBuilder.Entity<Price>(entity =>
             {
@@ -60,6 +114,15 @@ namespace kempsoft.Models.DataBase
                 entity.Property(e => e.ProjectImg).HasMaxLength(100);
 
                 entity.Property(e => e.ProjectRoute).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<StatusPay>(entity =>
+            {
+                entity.ToTable("StatusPay");
+
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.Property(e => e.Name).HasMaxLength(50);
             });
 
             modelBuilder.Entity<TypePrice>(entity =>
