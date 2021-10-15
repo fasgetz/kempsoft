@@ -1,0 +1,36 @@
+﻿@model int
+
+@{
+    ViewData["Title"] = "страница оплаты";
+}
+
+
+
+<div id="paymentblock">
+    <paymentcomponent idprice="@Model"></paymentcomponent>
+</div>
+<section class="wow bounceInUp mt-5 pb-5 container-xl payments-logo-block">
+    <h3 class="header-section text-center text-lg-start">Мы принимаем оплату банковскими картами</h3>
+    <div class="row justify-content-between mt-5">
+        <div class="col-12 col-lg mt-5">
+            <img src="~/img/payments/mir.png" alt="Alternate Text" />
+        </div>
+        <div class="col-12 col-lg mt-5">
+            <img src="~/img/payments/visa.png" alt="Alternate Text" />
+        </div>
+        <div class="col-12 col-lg mt-5">
+            <img src="~/img/payments/mastercard.png" alt="Alternate Text" />
+        </div>
+        <div class="col-12 col-lg mt-5">
+            <img src="~/img/payments/jcb.png" alt="Alternate Text" />
+        </div>
+    </div>
+</section>
+
+
+
+
+@section scripts {
+    <script src="~/scripts/chunk-vendors.js"></script>
+    <script src="~/scripts/paymentSoft.js" asp-append-version="true"></script>
+} 
