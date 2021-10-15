@@ -3,6 +3,12 @@
     border-radius: 15px
 }
 
+/* Блок платежных лого (Мы принимаем) */
+.payments-logo-block img {
+    width: 100%;
+    height: auto
+}
+
 /* Блок презента */
 .present-block {
     background-size: 100%;
