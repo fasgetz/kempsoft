@@ -17,6 +17,7 @@ namespace kempsoft.Models.DataBase
         {
         }
 
+        public virtual DbSet<EmailsSender> sendersEmail { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<PaymentsStatus> PaymentsStatuses { get; set; }
         public virtual DbSet<Price> Prices { get; set; }
@@ -32,6 +33,17 @@ namespace kempsoft.Models.DataBase
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Cyrillic_General_CI_AS");
+
+
+            modelBuilder.Entity<EmailsSender>(entity =>
+            {
+                entity.ToTable("EmailSender");
+
+                entity.HasKey(i => i.Id);
+
+                entity.Property(e => e.email).HasColumnName("email").HasMaxLength(100);
+
+            });
 
             modelBuilder.Entity<Payment>(entity =>
             {

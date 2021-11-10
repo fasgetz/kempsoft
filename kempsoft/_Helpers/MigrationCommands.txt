@@ -1,0 +1,2 @@
+﻿add-migration Initial -context kempsoft.Models.DataBase.softkempContext
+update-database -context kempsoft.Models.DataBase.softkempContext
