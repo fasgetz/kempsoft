@@ -1,6 +1,8 @@
 using kempsoft.Models.DataBase;
 using kempsoft.Models.Identity;
 using kempsoft.Services;
+using kempsoft.Services.Email;
+using kempsoft.Services.EmailSenders;
 using kempsoft.Services.PaymentDbService;
 using kempsoft.Services.Price;
 using kempsoft.Services.SberbankService;
@@ -55,6 +57,8 @@ namespace kempsoft
             services.AddScoped<IPriceService, PriceService>();
             services.AddScoped<ISberbankService, SberbankService>();
             services.AddScoped<IPaymentService, PaymentService>();
+            services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IEmailsSendersService, EmailSendersService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

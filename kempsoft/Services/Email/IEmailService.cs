@@ -25,6 +25,6 @@ namespace kempsoft.Services.Email
         /// <param name="message">Сообщение</param>
         /// <param name="description">Дескрипшен к почте (предисловие в письме)</param>
         /// <returns></returns>
-        Task SendEmailAsync(IEnumerable<string> emailsTo, string subject, string message, string description = "Сообщение от студии разработки kempsoft");
+        public Task SendEmailAsync(IEnumerable<string> emailsTo, string subject, string message, string description = "Сообщение от студии разработки kempsoft");
     }
 }

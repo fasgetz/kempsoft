@@ -1,4 +1,5 @@
 ﻿using kempsoft.Models.ViewModels;
+using SberbankApi.Models.Reciept;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,5 +27,13 @@ namespace kempsoft.Services.SberbankService
         /// <param name="idPayment">Номер платежа сбербанка</param>
         /// <returns></returns>
         public Task<bool> checkSuccessPayment(string idPayment);
+
+
+        /// <summary>
+        /// Получение чека из налоговой
+        /// </summary>
+        /// <param name="idPayment">Айди платежа</param>
+        /// <returns></returns>
+        Task<RecieptResponse> getReciept(string idPayment);
     }
 }

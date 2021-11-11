@@ -4,6 +4,8 @@ using kempsoft.Services.Price;
 using Microsoft.Extensions.Configuration;
 using Sberbank.NetCore;
 using Sberbank.NetCore.Integration.Implementation.Payment;
+using SberbankApi;
+using SberbankApi.Models.Reciept;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +23,7 @@ namespace kempsoft.Services.SberbankService
         private readonly IPriceService priceService;
         private readonly IPaymentService paymentService;
         private readonly SberbankClient client;
+        private readonly ISberApiClient clientSberApi; // Собственный клиент
 
         public SberbankService(IConfiguration config, IPriceService priceService, IPaymentService paymentService)
         {
@@ -30,6 +33,7 @@ namespace kempsoft.Services.SberbankService
 
             // Инициализируем клиент сбербанка
             client = new SberbankClient(config.GetValue<string>("sberbankSettings:login"), config.GetValue<string>("sberbankSettings:password"), config.GetValue<bool>("sberbankSettings:sandbox"));
+            clientSberApi = new SberApiClient(config.GetValue<string>("sberbankSettings:login"), config.GetValue<string>("sberbankSettings:password"), config.GetValue<bool>("sberbankSettings:sandbox"));
         }
 
 
@@ -114,6 +118,7 @@ namespace kempsoft.Services.SberbankService
                 // Добавляем статус, что оплачен заказ в БД
                 bool addSuccessPayment = await paymentService.addSuccessPaymentStatus(idPayment);
 
+
                 // Если статус успешно добавлен в бд, то соответственно вернуть true
                 if (addSuccessPayment == true)
                 {
@@ -123,6 +128,20 @@ namespace kempsoft.Services.SberbankService
             }
 
             return false;
+        }
+
+
+        /// <summary>
+        /// Получение чека из налоговой
+        /// </summary>
+        /// <param name="idPayment">Айди платежа</param>
+        /// <returns></returns>
+        public async Task<RecieptResponse> getReciept(string idPayment)
+        {
+            // Получаем платежку
+            var reciept = await clientSberApi.GetReciept(idPayment);
+
+            return reciept;
         }
     }
 }
