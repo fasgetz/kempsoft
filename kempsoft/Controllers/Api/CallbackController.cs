@@ -88,10 +88,10 @@ namespace kempsoft.Controllers.Api
                       }
                       else
                       {
-                          messageSuccessPayment = $"Чек заказа №{mdOrder} в налоговой еще от {DateTime.Now} еще не зарегистрирован, но вы сможете посмотреть его позже на сайте ФНС/Эватола";
+                          messageSuccessPayment = $"Чек заказа №{mdOrder} в налоговой от {DateTime.Now} не зарегистрирован, но вы сможете посмотреть его позже на сайте ФНС/Эватола";
 
 
-                          await emailServiceScope.SendEmailAsync(listEmails.Select(i => i.email), $"Успешная оплата платежа {mdOrder}", messageSuccessPayment);
+                          await emailServiceScope.SendEmailAsync(listEmails.Select(i => i.email), $"Чек еще не зарегистрирован {mdOrder}", messageSuccessPayment);
                           System.IO.File.AppendAllText("test.txt", $"{DateTime.Now} | чек не найден {mdOrder}" + Environment.NewLine);
                       }
                   });
