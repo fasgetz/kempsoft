@@ -16,6 +16,10 @@
                     <div class="border-bottom mt-5"></div>
                     <div class="price-item__price mt-3">
                         @item.Price1.Value.ToString("N0") руб.
+                        @if (item.IdTypePrice == 3)
+                        {
+                            <span> / мес.</span>
+                        }
                     </div>
                     @if (item.IdTypePrice == 2)
                     {
