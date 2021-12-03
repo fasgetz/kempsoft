@@ -72,7 +72,8 @@ namespace kempsoft.Services.SberbankService
                 ReturnUrl = config.GetValue<string>("sberbankSettings:successUrl"),
                 FailUrl = config.GetValue<string>("sberbankSettings:successUrl"),
                 SessionTimeoutSeconds = 3600,
-                TaxSystem = Sberbank.NetCore.Integration.Implementation.Payment.TaxSystem.Common,
+                
+                //TaxSystem = Sberbank.NetCore.Integration.Implementation.Payment.TaxSystem,
             });
 
 

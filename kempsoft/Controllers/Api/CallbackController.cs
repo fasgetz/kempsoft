@@ -61,7 +61,7 @@ namespace kempsoft.Controllers.Api
                     await emailServiceScope.SendEmailAsync(listEmails.Select(i => i.email), $"Успешная оплата платежа {mdOrder}", messageSuccessPayment);
 
                     // Ожидание две минуты для формирования платежки в налоговой
-                    Thread.Sleep(120000);
+                    Thread.Sleep(300000);
                     // Теперь проверяем, есть ли чек в налоговой
                     var reciept = await sberServiceScope.getReciept(mdOrder);
 
